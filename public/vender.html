@@ -24,16 +24,16 @@
             <h2>Agregar Propiedad</h2>
             <form id="formAgregarPropiedad">
                 <div class="radio-group">
-                    <label><input type="radio" name="tipo" value="renta" required> Renta</label>
+                    <label ><input type="radio" name="tipo" value="renta" required> Renta</label>
                     <label><input type="radio" name="tipo" value="compra" required> Compra</label>
                 </div>
                 <div class="form-group">
-                    <label for="precio">Precio:</label>
-                    <input type="number" id="precio" name="precio" required min="0">
+                    <label for="precio" >Precio:</label>
+                    <input type="number" id="precio" name="precio" required min="0" class="input-precio">
                 </div>
                 <div class="form-group">
                     <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion" required>
+                    <input type="text" id="direccion" name="direccion" required class="input-colonia">
                 </div>
                 <div class="radio-group">
                     <label><input type="radio" name="tipo_propiedad" value="casa" required> Casa</label>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" name="descripcion" required></textarea>
+                    <textarea id="descripcion" name="descripcion" required class="input-descripcion"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="metros_cuadrados">Metros Cuadrados:</label>
@@ -57,9 +57,9 @@
                 </div>
                 <div class="form-group">
                     <label>Agregar imágenes:</label>
-                    <input type="file" id="imagenes" name="imagenes[]" multiple>
+                    <input type="file" id="imagenes" name="imagenes[]" multiple >
                 </div>
-                <button type="submit">Publicar</button>
+                <button type="submit" class="button">Publicar</button>
             </form>
         </div>
     </section>

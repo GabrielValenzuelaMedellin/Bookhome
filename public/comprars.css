@@ -128,3 +128,63 @@ body {
     font-size: 0.9em;
     color: #777;
 }
+form{
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    width: 600px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.titulo{
+    font-size: 1.2em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;;
+}
+.texto{
+    font-size: 0.9em;
+    color: #333;
+    margin: 0;
+    text-align: left;
+}
+.input-colonia{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+.input-precio{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-top: 5px;
+    width: 45%;
+    display: inline-block;
+}
+.button {
+    padding: 10px;
+    background-color: #1a512f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+    width: 80px;
+    text-align: center;
+}
+label{
+    font-size: 0.9em;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

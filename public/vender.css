@@ -41,30 +41,40 @@ body {
 
 /* Form Container */
 .form-container {
-    background-color: var(--secondary-color);
-    border: 1px solid #ccc;
-    border-radius: 5px;
     padding: 20px;
-    margin: 20px auto;
-    width: 400px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    width: 500px; /* Ajustado para que el formulario no sea tan amplio */
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    margin: 20px auto; 
+}
+.form-container h2{
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
 }
 
 /* Form Elements */
 .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--highlight-color);
+    color: var(--secondary-color);
+    font-size: 1em;
+    
 }
 
 .radio-group {
     display: flex;
-    align-items: center;
+    margin-bottom: 10px;
 }
 
 .radio-group input[type="radio"] {
@@ -72,16 +82,18 @@ body {
 }
 
 .radio-group label {
-    color: var(--highlight-color);
+    font-size: 1em;
+    color: var(--secondary-color);
 }
 
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 0.95em;
 }
 
 .form-group button {
@@ -110,4 +122,72 @@ body {
 .footer-div .redes {
     text-align: right;
     font-size: 30px;
+}
+.titulo{
+    font-size: 1.2em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;;
+}
+.texto{
+    font-size: 0.9em;
+    color: #333;
+    margin: 0;
+}
+.input-colonia{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+.input-precio{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+.input-descripcion{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95em;
+    height: 100px;
+    resize: vertical;
+}
+.apply-button {
+    padding: 10px;
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+    width: 80px;
+    text-align: center;
+}
+.button {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #022923;
+}
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
 }
