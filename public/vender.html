@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Propiedad - Book-Home</title>
+    <link rel="stylesheet" href="vender.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="vender.html">VENDER</a></li>
+            <li><a href="nosotros.html">NOSOTROS</a></li>
+            <li><a href="inicio.html">INICIAR SESIÓN</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <div class="form-container">
+            <h2>Agregar Propiedad</h2>
+            <form id="formAgregarPropiedad">
+                <div class="radio-group">
+                    <label><input type="radio" name="tipo" value="renta" required> Renta</label>
+                    <label><input type="radio" name="tipo" value="compra" required> Compra</label>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="radio-group">
+                    <label><input type="radio" name="tipo_propiedad" value="casa" required> Casa</label>
+                    <label><input type="radio" name="tipo_propiedad" value="departamento" required> Departamento</label>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="metros_cuadrados">Metros Cuadrados:</label>
+                    <input type="number" id="metros_cuadrados" name="metros_cuadrados" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="habitaciones">Habitaciones:</label>
+                    <input type="number" id="habitaciones" name="habitaciones" required min="1">
+                </div>
+                <div class="form-group">
+                    <label for="banos">Baños:</label>
+                    <input type="number" id="banos" name="banos" required min="1">
+                </div>
+                <div class="form-group">
+                    <label>Agregar imágenes:</label>
+                    <input type="file" id="imagenes" name="imagenes[]" multiple>
+                </div>
+                <button type="submit">Publicar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-div">
+            <p>DERECHOS RESERVADOS POR BOOK HOME®</p>
+            <div class="redes">
+                <p>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="agregar.js"></script>
+</body>
+</html>

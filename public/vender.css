@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #034134;
+    --secondary-color: #333333;
+    --text-color: #ffffff;
+    --background-color: #333333;
+    --highlight-color: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #f5f5f5;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+/* Form Container */
+.form-container {
+    background-color: var(--secondary-color);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--highlight-color);
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio-group label {
+    color: var(--highlight-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group button {
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* Footer */
+.footer-div {
+    background-color: #034134;
+    padding: 35px;
+}
+
+.footer-div p {
+    color: white;
+}
+
+.footer-div .redes {
+    text-align: right;
+    font-size: 30px;
+}

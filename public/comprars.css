@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #034134;
+    --secondary-color: #333333;
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+}
+
+.placeholder h2 {
+    color: var(--text-color);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.placeholder p {
+    color: var(--text-color);
+    font-size: 1.2em;
+}
+
+.footer-div{
+    background-color:#034134;
+    padding: 35px;
+}
+
+.footer-div p{
+    color: white;
+}
+
+.footer-div .redes{
+    text-align: right;
+    font-size: 30px;
+}
+/* Contenedor del catálogo */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Tarjeta de propiedad */
+.propiedad {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.propiedad:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen de la propiedad en la tarjeta */
+.propiedad img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Contenido de la propiedad */
+.propiedad-content {
+    padding: 16px;
+}
+
+.propiedad-content h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.propiedad-content p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.propiedad-content .precio {
+    color: #4CAF50; /* Verde */
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Íconos de detalles */
+.propiedad-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #777;
+}
