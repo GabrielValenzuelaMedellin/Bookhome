@@ -1,0 +1,137 @@
+
+:root {
+    --primary-color: #034134;
+    --secondary-color: #333333;
+    --text-color: #ffffff;
+    --background-color: #333333;
+    --highlight-color: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #f5f5f5;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+.hero {
+    background-image: url('IMAGENES/img4.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--highlight-color);
+    padding: 150px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+.about-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    color: white;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.values-section {
+    padding: 50px 20px;
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
+}
+
+.values-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.values-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.value-item {
+    text-align: center;
+}
+
+.value-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.value-item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.footer-div{
+    background-color:#034134;
+    padding: 35px;
+}
+
+.footer-div p{
+    color: white;
+}
+
+.footer-div .redes{
+    text-align: right;
+    font-size: 30px;
+}
