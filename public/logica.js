@@ -10,6 +10,11 @@ function validateName(name) {
     return regex.test(name);
 }
 
+function validateTelefono(telefono) {
+    const regex = /^[0-9]{10}$/;
+    return regex.test(telefono);
+}
+
 function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     return regex.test(email);
@@ -37,10 +42,11 @@ function isEmptyOrSpaces(str) {
     return str.trim().length === 0;
 }
 
-// Registro con validación de nombre y correo únicos
+// Registro con validación de nombre, numero y correo únicos
 formSignUp.addEventListener("submit", function (e) {
     e.preventDefault();
     const name = formSignUp.querySelector('input[placeholder="Nombre"]').value.trim();
+    const telefono = formSignUp.querySelector('input[placeholder="Telefono"]').value.trim();
     const email = formSignUp.querySelector('input[placeholder="Email"]').value.trim();
     const password = formSignUp.querySelector('input[placeholder="Contraseña"]').value.trim();
     const confirmPassword = formSignUp.querySelector('input[placeholder="Confirmar Contraseña"]').value.trim();
@@ -53,6 +59,11 @@ formSignUp.addEventListener("submit", function (e) {
 
     if (!validateName(name)) {
         showAlert('error', 'Nombre inválido', 'El nombre solo puede contener letras y un máximo de 30 caracteres.');
+        return;
+    }
+
+    if (!validateNumero(telefono)) {
+        showAlert('error', 'Telefono inválido', 'Por favor ingrese los datos correctamente, el telefono solo puede tener numeros y 10 caracteres');
         return;
     }
 
@@ -79,12 +90,14 @@ formSignUp.addEventListener("submit", function (e) {
                 showAlert('error', 'Email duplicado', 'Este correo ya está registrado.');
             } else if (data.nombreExistente) {
                 showAlert('error', 'Nombre duplicado', 'Este nombre de usuario ya está registrado.');
+            } else if (data.numeroExistente) {
+                showAlert('error', 'Telefono duplicado', 'Este telefono ya está registrado.');
             } else {
                 // Registro del usuario
                 fetch("/agregarUsuario", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ nombre: name, email: email, password: password })
+                    body: JSON.stringify({ nombre: name, telefono: telefono, email: email, password: password })
                 })
                 .then(response => {
                     if (response.ok) {

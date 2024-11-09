@@ -5,6 +5,7 @@ USE homebook;
 CREATE TABLE Usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(30) NOT NULL,
+    telefono VARCHAR(10) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
     contrasena CHAR(16) NOT NULL
 );

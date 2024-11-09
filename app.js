@@ -36,8 +36,8 @@ app.get('/verificarUsuario', (req, res) => {
 });
 
 app.post('/agregarUsuario', (req, res) => {
-    const { nombre, email, password } = req.body;
-    con.query('INSERT INTO Usuarios (nombre, email, contrasena) VALUES (?, ?, ?)', [nombre, email, password], (error, results) => {
+    const { nombre, telefono, email, password } = req.body;
+    con.query('INSERT INTO Usuarios (nombre, telefono, email, contrasena) VALUES (?, ?, ?)', [nombre, telefono, email, password], (error, results) => {
         if (error) res.status(500).send('Error en el registro');
         else res.status(200).send('Usuario registrado correctamente');
     });
