@@ -4,7 +4,7 @@ const btnSignUp = document.getElementById("btn-sign-up");
 const formSignIn = document.querySelector(".sign-in");
 const formSignUp = document.querySelector(".sign-up");
 
-// Funciones de validación
+
 function validateName(name) {
     const regex = /^[a-zA-Z\s]{1,30}$/;
     return regex.test(name);
@@ -62,7 +62,7 @@ formSignUp.addEventListener("submit", function (e) {
         return;
     }
 
-    if (!validateNumero(telefono)) {
+    if (!validateTelefono(telefono)) {
         showAlert('error', 'Telefono inválido', 'Por favor ingrese los datos correctamente, el telefono solo puede tener numeros y 10 caracteres');
         return;
     }
