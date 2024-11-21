@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 :root {
     --primary-color: #034134;
     --secondary-color: #333333;
@@ -7,42 +9,131 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    color: var(--secondary-color);
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 /* Navbar */
-.navbar {
-    background-color: var(--primary-color);
-    padding: 15px 0;
-    text-align: center;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.navbar a {
-    color: var(--highlight-color);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
+    list-style: none;
 }
 
-.navbar a:hover {
-    color: #f5f5f5;
-    border-bottom: 2px solid var(--highlight-color);
+body{
+    font-family: "Ubuntu", cursive;
+    background-color: #ffffff;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.img-logo{
+    border-radius: 50%;
+    width: 10%;
+}
+
+.header{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)),
+        url(IMAGENES/img3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: white;
+    font-size: 25px;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+    display: block;
+}
+
+.menu .navbar ul li a:hover{
+    color: #B7975B;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+.header-txt{
+    width: 50%;
+}
+
+.header-txt h1{
+    font-size: 75px;
+    line-height: 110px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.header-txt p{
+    font-size: 16px;
+    color: #E0E0E0;
+    margin-bottom: 25px;
+}
+
+.btn-1{
+    display: inline-block;
+    padding: 11px 45px;
+    background-color: #B7975B;
+    color: white;
+    border-radius: 25px;
+    font-size: 22px;
+}
+
+.btn-1:hover{
+    background-color: #a08450;
 }
 
 /* Form Container */
 .form-container {
     padding: 20px;
-    background-color: #f3f3f3;
+    background-color: #1a512f;
     border-radius: 10px;
     width: 500px; /* Ajustado para que el formulario no sea tan amplio */
     font-family: Arial, sans-serif;
@@ -54,7 +145,7 @@ body {
 .form-container h2{
     font-size: 1.5em;
     text-align: center;
-    color: var(--secondary-color);
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 
@@ -67,7 +158,7 @@ body {
 }
 
 .form-group label {
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-size: 1em;
     
 }
@@ -83,7 +174,7 @@ body {
 
 .radio-group label {
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .form-group input[type="text"],
@@ -91,7 +182,7 @@ body {
 .form-group textarea {
     width: 95%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     font-size: 0.95em;
 }
@@ -108,7 +199,74 @@ body {
 .form-group button:hover {
     background-color: darken(var(--primary-color), 10%);
 }
-
+.titulo{
+    font-size: 1.2em;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;;
+}
+.texto{
+    font-size: 0.9em;
+    color: #ffffff;
+    margin: 0;
+}
+.input-colonia{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+.input-precio{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+.input-descripcion{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 0.95em;
+    height: 100px;
+    resize: vertical;
+}
+.apply-button {
+    padding: 10px;
+    background-color: #ffffff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+    width: 80px;
+    text-align: center;
+}
+.button {
+    padding: 12px;
+    background-color: #B7975B;
+    color: var(--highlight-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #B7975B;
+}
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
+}
 /* Footer */
 .footer-div {
     background-color: #034134;
@@ -122,72 +280,4 @@ body {
 .footer-div .redes {
     text-align: right;
     font-size: 30px;
-}
-.titulo{
-    font-size: 1.2em;
-    text-align: center;
-    color: #333;
-    margin-bottom: 10px;;
-}
-.texto{
-    font-size: 0.9em;
-    color: #333;
-    margin: 0;
-}
-.input-colonia{
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.95em;
-}
-.input-precio{
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.95em;
-}
-.input-descripcion{
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.95em;
-    height: 100px;
-    resize: vertical;
-}
-.apply-button {
-    padding: 10px;
-    background-color: #ccc;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: flex-end;
-    width: 80px;
-    text-align: center;
-}
-.button {
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: var(--highlight-color);
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-.button:hover {
-    background-color: #022923;
-}
-@media (max-width: 600px) {
-    .form-container {
-        width: 90%;
-    }
 }

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 :root {
     --primary-color: #034134;
-    --secondary-color: #333333;
+    --secondary-color: #ffffff;
     --text-color: #ffffff;
 }
 
@@ -8,6 +10,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
@@ -16,25 +20,122 @@ body {
     color: var(--text-color);
 }
 
-.navbar {
-    background-color: var(--primary-color);
-    padding: 15px;
-    text-align: center;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.navbar a {
-    color: var(--text-color);
+/* Menú */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
     text-decoration: none;
-    font-size: 16px;
+    list-style: none;
 }
 
+body{
+    font-family: "Ubuntu", cursive;
+    background-color: #ffffff;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.img-logo{
+    border-radius: 50%;
+    width: 10%;
+}
+
+.header{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)),
+        url(IMAGENES/img3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: white;
+    font-size: 25px;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+    display: block;
+}
+
+.menu .navbar ul li a:hover{
+    color: #B7975B;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+.header-txt{
+    width: 50%;
+}
+
+.header-txt h1{
+    font-size: 75px;
+    line-height: 110px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.header-txt p{
+    font-size: 16px;
+    color: #E0E0E0;
+    margin-bottom: 25px;
+}
+
+.btn-1{
+    display: inline-block;
+    padding: 11px 45px;
+    background-color: #B7975B;
+    color: white;
+    border-radius: 25px;
+    font-size: 22px;
+}
+
+.btn-1:hover{
+    background-color: #a08450;
+}
+/* Contenido principal */
 .content {
     display: flex;
     align-items: center;
@@ -43,94 +144,25 @@ body {
     text-align: center;
 }
 
-.placeholder h2 {
-    color: var(--text-color);
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.placeholder p {
-    color: var(--text-color);
-    font-size: 1.2em;
-}
-
-.footer-div{
-    background-color:#034134;
+/* Footer */
+.footer-div {
+    background-color: var(--primary-color);
     padding: 35px;
 }
 
-.footer-div p{
+.footer-div p {
     color: white;
 }
 
-.footer-div .redes{
+.footer-div .redes {
     text-align: right;
     font-size: 30px;
 }
-/* Contenedor del catálogo */
-.catalogo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
 
-/* Tarjeta de propiedad */
-.propiedad {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 250px;
-    transition: transform 0.3s ease;
-}
-
-.propiedad:hover {
-    transform: translateY(-5px);
-}
-
-/* Imagen de la propiedad en la tarjeta */
-.propiedad img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-/* Contenido de la propiedad */
-.propiedad-content {
-    padding: 16px;
-}
-
-.propiedad-content h3 {
-    font-size: 1.2em;
-    margin: 0;
-    color: #333;
-}
-
-.propiedad-content p {
-    margin: 4px 0;
-    font-size: 0.9em;
-    color: #666;
-}
-
-.propiedad-content .precio {
-    color: #4CAF50; /* Verde */
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-top: 10px;
-}
-
-/* Íconos de detalles */
-.propiedad-details {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #777;
-}
-form{
+/* Formulario de búsqueda */
+form {
     padding: 20px;
-    background-color: #f3f3f3;
+    background-color: #1a512f;
     border-radius: 10px;
     width: 600px;
     font-family: Arial, sans-serif;
@@ -138,19 +170,23 @@ form{
     flex-direction: column;
     gap: 10px;
 }
-.titulo{
+
+.titulo {
     font-size: 1.2em;
     text-align: center;
-    color: #333;
-    margin-bottom: 10px;;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
-.texto{
+
+.texto {
     font-size: 0.9em;
-    color: #333;
+    color: #f7f7f7;
     margin: 0;
     text-align: left;
 }
-.input-colonia{
+
+.input-colonia,
+.input-precio {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -158,19 +194,15 @@ form{
     font-size: 0.9em;
     margin-top: 5px;
 }
-.input-precio{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.9em;
-    margin-top: 5px;
+
+.input-precio {
     width: 45%;
     display: inline-block;
 }
+
 .button {
     padding: 10px;
-    background-color: #1a512f;
+    background-color: #B7975B;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -181,10 +213,13 @@ form{
     width: 80px;
     text-align: center;
 }
-label{
+
+label {
     font-size: 0.9em;
-    color: #333;
+    color: #ffffff;
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
+

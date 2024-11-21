@@ -9,19 +9,36 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<header class="header">
+    <div class="menu container">
+        <a href="index.html" class="logo">Logo</a>
+        <input type="checkbox" id="menu">
+        <nav class="navbar">
+            <ul>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+                <li><a href="comprar.html">COMPRAR</a></li>
+                <li><a href="vender.html">VENDER</a></li>
+                <li><a href="inicio.html">INICIAR SESION O REGISTRARSE</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="header-content container">
+        <div class="header-txt">
+            <h1>VENDER PROPIEDAD</h1>
+            <p>
+                BOOK-HOME es un proyecto dedicado a la compra y venta de 
+                casas, orientado a facilitar el proceso de adquisición y venta de 
+                propiedades residenciales tanto para compradores como para vendedores. 
+                Nuestra plataforma digital permiten a los usuarios consultar inmobiliarios
+                y ver cual se adapta mejor a sus necesidades
+            </p>
+        </div>
+    </div>
+</header>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="vender.html">VENDER</a></li>
-            <li><a href="nosotros.html">NOSOTROS</a></li>
-            <li><a href="inicio.html">INICIAR SESIÓN</a></li>
-        </ul>
-    </nav>
-
     <section class="content">
         <div class="form-container">
-            <h2>Agregar Propiedad</h2>
+            <h2 >Agregar Propiedad</h2>
             <form id="formAgregarPropiedad">
                 <div class="radio-group">
                     <label ><input type="radio" name="tipo" value="renta" required> Renta</label>
