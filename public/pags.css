@@ -1,25 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 
 *{
     margin: 0;
     padding: 0;
-    box-sizing: 0;
     text-decoration: none;
     list-style: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 body{
-    font-family: "Ubuntu", cursive;
-    background-color: #09080D;
+    font-family: "Montserrat", sans-serif;
+    background-image: url("IMAGENES/img3.jpg");
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 p{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    flex-grow: 1;
 }
 
 .img-logo{
@@ -28,16 +33,15 @@ p{
 }
 
 .header{
-    background-image: linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)),
-        url(IMAGENES/img3.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
+    position: sticky; /* Hace que el header se quede en la parte superior */
+    top: 0;
+    background:#04916F;
+    
+    min-height: 9vh;
     display: flex;
     align-items: center;
+
+    
     
 }
 
@@ -65,19 +69,17 @@ p{
     font-size: 20px;
     padding: 20px;
     color: white;
-    display: block;
+    
 }
 
 .menu .navbar ul li a:hover{
     color: #B7975B;
 }
 
-#menu{
-    display: none;
-}
+
 
 .menu-icono{
-    width: 25px;
+    width: 200px;
 }
 
 .menu label{
@@ -87,6 +89,7 @@ p{
 
 .header-txt{
     width: 50%;
+    flex-grow: 1;
 }
 
 .header-txt h1{
@@ -114,17 +117,24 @@ p{
 .btn-1:hover{
     background-color: #a08450;
 }
+footer {
+    background-color:#04916F;
+    padding: 35px;
+    margin-top: auto;
+    bottom: 0;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
 
 .footer-div{
-    background-color:#034134;
+    
     padding: 35px;
+    bottom: 0;
 }
 
-.footer-div p{
-    color: white;
-}
 
-.footer-div .redes{
+.redes{
     text-align: right;
     font-size: 30px;
 }
+
