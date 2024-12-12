@@ -10,18 +10,23 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <header class="header">
-    <div class="menu container">
-        <a href="index.html" class="logo">Logo</a>
-        <input type="checkbox" id="menu">
+    <div class="menu">
+        <a href="index.html" class="logo"><img src="IMAGENES/img17.jpg" alt="Logo" class="" width="70px" height="40px"></a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <nav class="navbar">
             <ul>
-                <li><a href="nosotros.html">NOSOTROS</a></li>
-                <li><a href="comprar.html">COMPRAR</a></li>
-                <li><a href="vender.html">VENDER</a></li>
-                <li><a href="inicio.html">INICIAR SESION O REGISTRARSE</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="comprar.html">Comprar</a></li>
+                <li><a href="vender.html">Vender</a></li>
+                <li><a href="inicio.html">Iniciar Sesión o Registrarse</a></li>
+                <li><a href="logout.html">Cerrar sesión</a></li>
+                <li><a>  </a></li>
             </ul>
         </nav>
     </div>
+
     <div class="header-content container">
         <div class="header-txt">
             <h1>VENDER PROPIEDAD</h1>
@@ -31,6 +36,7 @@
                 propiedades residenciales tanto para compradores como para vendedores. 
                 Nuestra plataforma digital permiten a los usuarios consultar inmobiliarios
                 y ver cual se adapta mejor a sus necesidades
+                <hr>
             </p>
         </div>
     </div>
@@ -38,44 +44,93 @@
 <body>
     <section class="content">
         <div class="form-container">
-            <h2 >Agregar Propiedad</h2>
+            <h2>Agregar Propiedad</h2>
             <form id="formAgregarPropiedad">
-                <div class="radio-group">
-                    <label ><input type="radio" name="tipo" value="renta" required> Renta</label>
-                    <label><input type="radio" name="tipo" value="compra" required> Compra</label>
+                <div class="form-section">
+                    <!-- Sección de Tipo, Precio, Metros, Habitaciones y Baños -->
+                    <div class="form-group">
+                        <label>Tipo:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tipo" value="renta"> Renta</label>
+                            <label><input type="radio" name="tipo" value="compra"> Compra</label>
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="precio">Precio:</label>
+                        <input type="number" id="precio" name="precio" class="input-precio">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="metros_cuadrados">Metros Cuadrados:</label>
+                        <input type="number" id="metros_cuadrados" name="metros_cuadrados">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="habitaciones">Habitaciones:</label>
+                        <input type="number" id="habitaciones" name="habitaciones">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="banos">Baños:</label>
+                        <input type="number" id="banos" name="banos">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="precio" >Precio:</label>
-                    <input type="number" id="precio" name="precio" required min="0" class="input-precio">
+        
+                <div class="form-section">
+                    <!-- Sección de Dirección -->
+                    <div class="form-group">
+                        <label for="calle">Calle:</label>
+                        <input type="text" id="calle" name="calle" class="input-direccion">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="numero_exterior">Número Exterior:</label>
+                        <input type="text" id="numero_exterior" name="numero_exterior" class="input-direccion">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="numero_interior">Número Interior:</label>
+                        <input type="text" id="numero_interior" name="numero_interior" class="input-direccion">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="colonia">Colonia:</label>
+                        <input type="text" id="colonia" name="colonia" class="input-direccion">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="codigo_postal">Código Postal:</label>
+                        <input type="text" id="codigo_postal" name="codigo_postal" class="input-direccion">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="delegacion">Delegación/Municipio:</label>
+                        <input type="text" id="delegacion" name="delegacion" class="input-direccion">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion" required class="input-colonia">
+        
+                <div class="form-section">
+                    <!-- Sección de Imágenes y Descripción -->
+                    <div class="form-group">
+                        <label>Tipo de Propiedad:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tipo_propiedad" value="casa"> Casa</label>
+                            <label><input type="radio" name="tipo_propiedad" value="departamento"> Departamento</label>
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="descripcion">Descripción:</label>
+                        <textarea id="descripcion" name="descripcion" class="input-descripcion"></textarea>
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Agregar imágenes:</label>
+                        <input type="file" id="imagenes" name="imagenes[]" multiple accept="image/*">
+                    </div>
                 </div>
-                <div class="radio-group">
-                    <label><input type="radio" name="tipo_propiedad" value="casa" required> Casa</label>
-                    <label><input type="radio" name="tipo_propiedad" value="departamento" required> Departamento</label>
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" name="descripcion" required class="input-descripcion"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="metros_cuadrados">Metros Cuadrados:</label>
-                    <input type="number" id="metros_cuadrados" name="metros_cuadrados" required min="0">
-                </div>
-                <div class="form-group">
-                    <label for="habitaciones">Habitaciones:</label>
-                    <input type="number" id="habitaciones" name="habitaciones" required min="1">
-                </div>
-                <div class="form-group">
-                    <label for="banos">Baños:</label>
-                    <input type="number" id="banos" name="banos" required min="1">
-                </div>
-                <div class="form-group">
-                    <label>Agregar imágenes:</label>
-                    <input type="file" id="imagenes" name="imagenes[]" multiple >
-                </div>
+        
                 <button type="submit" class="button">Publicar</button>
             </form>
         </div>
@@ -83,13 +138,29 @@
 
     <footer>
         <div class="footer-div">
-            <p>DERECHOS RESERVADOS POR BOOK HOME®</p>
+            <p>&copy; <span id="year"></span> Homebook. Todos los derechos reservados.</p><br>
             <div class="redes">
                 <p>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                    <ion-icon name="logo-facebook"></ion-icon>
-                    <ion-icon name="logo-twitter"></ion-icon>
+                            <!-- Enlace a Instagram -->
+        <a href="https://www.instagram.com/bookhome_app/?next=%2F&hl=es" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <!-- Enlace a WhatsApp -->
+        <a href="https://wa.me/525528456729" target="_blank">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+
+        <!-- Enlace a Facebook (debes agregar la URL correcta de tu perfil o página) 
+        <a href="https://www.facebook.com/tu.pagina" target="_blank">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>-->
+
+        <!-- Enlace a Twitter -->
+        <a href="https://x.com/hoomebook51521" target="_blank">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
                 </p>
             </div>
         </div>
@@ -97,4 +168,17 @@
 
     <script src="agregar.js"></script>
 </body>
+<script>
+    let lastScrollY = 0;
+    const menu = document.querySelector('.menu');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            menu.classList.add('hidden'); // Oculta al bajar
+        } else {
+            menu.classList.remove('hidden'); // Muestra al subir
+        }
+        lastScrollY = window.scrollY;
+    });
+</script>
 </html>

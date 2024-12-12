@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Propiedad - Book-Home</title>
+    <link rel="stylesheet" href="detalles.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+   
+    <div class="menu">
+        <a href="index.html" class="logo"><img src="IMAGENES/img17.jpg" alt="Logo" class="" width="70px" height="40px"></a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="comprar.html">Comprar</a></li>
+                <li><a href="vender.html">Vender</a></li>
+                <li><a href="inicio.html">Iniciar Sesión o Registrarse</a></li>
+                <li><a href="logout.html">Cerrar sesión</a></li>
+                <li><a>  </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="content">
+        <div class="propiedad-detalles" id="detallesPropiedad">
+            <div class="detalle-contenedor">
+                <!-- Imagen -->
+                <div class="imagen-contenedor">
+                    <img id="imagenPropiedad" src="IMAGENES/img2.jpg" alt="Imagen de la propiedad" class="foto-detalle">
+                </div>
+    
+                <!-- Información -->
+                <div class="info-detalle">
+                    <h1 id="tipoPropiedad">Casa</h1>
+                    <p id="precio"><strong>Precio:</strong> $3,000,000</p>
+                    <p id="descripcion"><strong>Descripción:</strong> Oxxo cerca</p>
+                    <p id="metros"><strong>Metros cuadrados:</strong> 600 m²</p>
+                    <p id="habitaciones"><strong>Habitaciones:</strong> 8</p>
+                    <p id="banos"><strong>Baños:</strong> 4</p>
+                    <p id="direccion"><strong>Dirección:</strong> 1 de mayo 46, Int. 8, Plan de Ayala, Naucalpan, C.P. 53710</p>
+                    <p id="vendedor"><strong>Vendedor:</strong> Nombre no disponible</p>
+                    <p id="telefono"><strong>Teléfono:</strong> Número no disponible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-div">
+            <p>&copy; <span id="year"></span> Homebook. Todos los derechos reservados.</p><br>
+            <div class="redes">
+                <p>
+                            <!-- Enlace a Instagram -->
+        <a href="https://www.instagram.com/bookhome_app/?next=%2F&hl=es" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <!-- Enlace a WhatsApp -->
+        <a href="https://wa.me/525528456729" target="_blank">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+
+        <!-- Enlace a Facebook (debes agregar la URL correcta de tu perfil o página) 
+        <a href="https://www.facebook.com/tu.pagina" target="_blank">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>-->
+
+        <!-- Enlace a Twitter -->
+        <a href="https://x.com/hoomebook51521" target="_blank">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="detalles.js"></script>
+</body>
+</html>

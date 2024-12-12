@@ -1,49 +1,75 @@
-document.addEventListener("DOMContentLoaded", () => {
-    obtenerPropiedades();
-});
 
-function obtenerPropiedades() {
-    fetch("/obtenerPropiedades")
-        .then(response => response.json())
-        .then(propiedades => {
-            mostrarPropiedades(propiedades);
+document.addEventListener("DOMContentLoaded", () => {
+    cargarPropiedades(); // Cargar propiedades al iniciar
+});
+// Este script obtiene el año actual y lo inserta en el lugar indicado.
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function cargarPropiedades() {
+    // Obtener todas las propiedades sin filtros
+    fetch('/obtenerPropiedades')
+        .then(response => {
+            if (!response.ok) throw new Error("Error al cargar las propiedades");
+            return response.json();
+        })
+        .then(data => {
+            mostrarPropiedades(data);
         })
         .catch(error => {
-            console.error("Error al obtener las propiedades:", error);
+            console.error("Error al cargar propiedades:", error);
         });
 }
 
-function mostrarPropiedades(propiedades) {
+function mostrarPropiedades(propiedades = []) {
     const catalogo = document.getElementById("catalogoPropiedades");
-    catalogo.innerHTML = ''; // Limpiamos el contenedor antes de agregar las propiedades
+    catalogo.innerHTML = ''; // Limpiar el catálogo
+
+    if (propiedades.length === 0) {
+        catalogo.innerHTML = '<p>No se encontraron propiedades.</p>';
+        return;
+    }
+
+    // Crear un conjunto de ids para evitar duplicados
+    const idsMostrados = new Set();
 
     propiedades.forEach(propiedad => {
-        // Crear el contenedor de cada propiedad
-        const propiedadDiv = document.createElement("div");
-        propiedadDiv.classList.add("propiedad");
+        if (idsMostrados.has(propiedad.id_propiedad)) {
+            return;  // Si ya se ha mostrado, no lo agregamos nuevamente
+        }
 
-        // HTML interno de cada tarjeta de propiedad
+        idsMostrados.add(propiedad.id_propiedad);  // Añadir el id a la lista de mostrados
+
+        // Asignar valores con un fallback a "No disponible" si los campos están vacíos
+        const colonia = propiedad.colonia || 'No disponible';
+        const tipo_propiedad = propiedad.tipo_propiedad || 'No disponible';
+        const precio = propiedad.precio || 'No disponible';
+        const metros_cuadrados = propiedad.metros_cuadrados || 'No disponible';
+        const habitaciones = propiedad.habitaciones || 'No disponible';
+        const banios = propiedad.banos || 'No disponible';
+        const tipo = propiedad.estado_propiedad || 'No disponible';
+        const imagenUrl = propiedad.url_imagen || '/uploads/default.jpg';
+
+        const propiedadDiv = document.createElement("div");
+        propiedadDiv.className = "propiedad";
         propiedadDiv.innerHTML = `
-            <img src="${propiedad.imagenUrl}" alt="Imagen de la propiedad">
-            <div class="propiedad-content">
-                <span class="etiqueta">¡Excelente precio!</span>
-                <h3>${propiedad.tipo_propiedad.charAt(0).toUpperCase() + propiedad.tipo_propiedad.slice(1)}</h3>
-                <p>${propiedad.ubicacion}</p>
-                <div class="propiedad-details">
-                    <span>${propiedad.metros_cuadrados} m²</span>
-                    <span>${propiedad.habitaciones} habitaciones</span>
-                    <span>${propiedad.banos} baños</span>
-                </div>
-                <p class="precio">Ahora $${propiedad.precio}</p>
-                <button onclick="agregarAFavoritos(${propiedad.id_propiedad})">Agregar a favoritos</button>
+            <img src="${imagenUrl}" alt="Propiedad" class="propiedad-img">
+            <div class="propiedad-info">
+                <h3>${tipo_propiedad} en ${tipo} en ${colonia}</h3>
+                <p><strong>Metros cuadrados: </strong>${metros_cuadrados}</p>
+                <p><strong>Habitaciones: </strong> ${habitaciones} <strong>Baños: </strong> ${banios}</p>
+                <p><strong>Precio:</strong> $${precio}</p>
+                <button onclick="verDetalles(${propiedad.id_propiedad})">Ver detalles</button>
             </div>
         `;
-
-        // Añadir la tarjeta de propiedad al catálogo
         catalogo.appendChild(propiedadDiv);
     });
 }
 
-function agregarAFavoritos(idPropiedad) {
-    console.log("Propiedad agregada a favoritos:", idPropiedad);
+
+
+function verDetalles(id) {
+    window.location.href = `detalles.html?id=${id}`;
 }
+
+
+

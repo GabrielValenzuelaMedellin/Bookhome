@@ -8,20 +8,25 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-
+<body>
     <header class="header">
-        <div class="menu container">
-            <a href="index.html" class="logo">Logo</a>
-            <input type="checkbox" id="menu">
+        <div class="menu">
+            <a href="index.html" class="logo"><img src="IMAGENES/img17.jpg" alt="Logo" class="" width="70px" height="40px"></a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <nav class="navbar">
                 <ul>
-                    <li><a href="nosotros.html">NOSOTROS</a></li>
-                    <li><a href="comprar.html">COMPRAR</a></li>
-                    <li><a href="vender.html">VENDER</a></li>
-                    <li><a href="inicio.html">INICIAR SESION O REGISTRARSE</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="comprar.html">Comprar</a></li>
+                    <li><a href="vender.html">Vender</a></li>
+                    <li><a href="inicio.html">Iniciar Sesión o Registrarse</a></li>
+                    <li><a href="logout.html">Cerrar sesión</a></li>
+                    <li><a>  </a></li>
                 </ul>
             </nav>
         </div>
+    
         <div class="header-content container">
             <div class="header-txt">
                 <h1>COMPRAR PROPIEDAD</h1>
@@ -29,46 +34,45 @@
                     BOOK-HOME es un proyecto dedicado a la compra y venta de 
                     casas, orientado a facilitar el proceso de adquisición y venta de 
                     propiedades residenciales tanto para compradores como para vendedores. 
-                    Nuestra plataforma digital permiten a los usuarios consultar inmobiliarios
-                    y ver cual se adapta mejor a sus necesidades
+                    Nuestra plataforma digital permite a los usuarios consultar inmobiliarios
+                    y ver cuál se adapta mejor a sus necesidades.
+                    <hr>
                 </p>
             </div>
         </div>
     </header>
-<body> 
+
     <section class="content">
         <div class="catalogo" id="catalogoPropiedades">
-            
             <!-- Las propiedades se cargarán aquí -->
-            <form class="search-form">
-                <h1 class="titulo">BUSCAR PROPIEDAD</h1>
-                <h3 class="texto">Precio:</h3>
-                <div>
-                    <input type="number" placeholder="Desde:" class="input-precio">
-                    <input type="number" placeholder="Hasta:" class="input-precio">
-                </div>
-                <h3 class="texto">Colonia:</h3>
-                <input type="text" placeholder="Colonia" class="input-colonia">
-                <label>
-                    <input type="checkbox"> Casa
-                </label>
-                <label>
-                    <input type="checkbox"> Departamento
-                </label>
-                <button type="button" class="button">Aplicar</button>
-           </form>
         </div>
     </section>
-
+        
     <footer>
         <div class="footer-div">
-            <p>DERECHOS RESERVADOS POR BOOK HOME®</p>
+            <p>&copy; <span id="year"></span> Homebook. Todos los derechos reservados.</p><br>
             <div class="redes">
                 <p>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                    <ion-icon name="logo-facebook"></ion-icon>
-                    <ion-icon name="logo-twitter"></ion-icon>
+                            <!-- Enlace a Instagram -->
+        <a href="https://www.instagram.com/bookhome_app/?next=%2F&hl=es" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <!-- Enlace a WhatsApp -->
+        <a href="https://wa.me/525528456729" target="_blank">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+
+        <!-- Enlace a Facebook (debes agregar la URL correcta de tu perfil o página) 
+        <a href="https://www.facebook.com/tu.pagina" target="_blank">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>-->
+
+        <!-- Enlace a Twitter -->
+        <a href="https://x.com/hoomebook51521" target="_blank">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
                 </p>
             </div>
         </div>
@@ -76,4 +80,17 @@
 
     <script src="catalogo.js"></script>
 </body>
+<script>
+    let lastScrollY = 0;
+    const menu = document.querySelector('.menu');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            menu.classList.add('hidden'); // Oculta al bajar
+        } else {
+            menu.classList.remove('hidden'); // Muestra al subir
+        }
+        lastScrollY = window.scrollY;
+    });
+</script>
 </html>

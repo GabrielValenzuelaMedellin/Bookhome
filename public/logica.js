@@ -4,7 +4,6 @@ const btnSignUp = document.getElementById("btn-sign-up");
 const formSignIn = document.querySelector(".sign-in");
 const formSignUp = document.querySelector(".sign-up");
 
-
 function validateName(name) {
     const regex = /^[a-zA-Z\s]{1,30}$/;
     return regex.test(name);
@@ -99,15 +98,20 @@ formSignUp.addEventListener("submit", function (e) {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ nombre: name, telefono: telefono, email: email, password: password })
                 })
-                .then(response => {
-                    if (response.ok) {
-                        showAlert('success', 'Registro exitoso', 'Usuario registrado correctamente.')
-                        .then(() => { window.location.href = '/'; });
-
+                .then(response => response.json())
+                .then(data => {
+                    if (data.authenticated) {
+                        showAlert('success', 'Registro exitoso', 'Usuario registrado y sesión iniciada.');
+                        window.location.href = '/index'; // Redirige al usuario a la página principal
                     } else {
                         showAlert('error', 'Error en el registro', 'No se pudo registrar el usuario.');
                     }
+                })
+                .catch(error => {
+                    console.error("Error en la solicitud:", error);
+                    showAlert('error', 'Error de conexión', 'Hubo un problema al conectar con el servidor.');
                 });
+                
             }
         })
         .catch(error => {
@@ -138,6 +142,21 @@ formSignIn.addEventListener("submit", function (e) {
         return;
     }
 
+    // Hacer una petición para obtener la información del usuario autenticado
+    fetch("/usuario")
+    .then(response => response.json())
+    .then(data => {
+        if (data.userId) {
+            console.log('Usuario autenticado:', data.username);
+        // Aquí puedes redirigir o mostrar el nombre del usuario en el frontend
+        } else {
+            console.log('Usuario no autenticado');
+        }
+    }).catch(error => {
+        console.error('Error al verificar la sesión', error);
+    });
+
+
     // Autenticación del usuario
     fetch("/iniciarSesion", {
         method: "POST",
@@ -148,8 +167,7 @@ formSignIn.addEventListener("submit", function (e) {
     .then(data => {
         if (data.authenticated) {
             formSignIn.reset();
-            // Redirige a la página principal después de un inicio de sesión exitoso
-            window.location.href = '/index';  // Aquí redirige a /index
+            window.location.href = '/index';
         } else {
             showAlert('error', 'Error en inicio de sesión', data.message);
         }
@@ -159,6 +177,7 @@ formSignIn.addEventListener("submit", function (e) {
         showAlert('error', 'Error de conexión', 'Hubo un problema al conectar con el servidor.');
     });
 });
+
 // Alternar entre formularios
 btnSignIn.addEventListener("click", () => {
     container.classList.remove("toggle");

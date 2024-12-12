@@ -11,23 +11,30 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <header class="header">
-    <div class="menu container">
-        <a href="index.html" class="logo">Logo</a>
-        <input type="checkbox" id="menu">
+    
+    <div class="menu">
+        <a href="index.html" class="logo"><img src="IMAGENES/img17.jpg" alt="Logo" class="" width="70px" height="40px"></a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <nav class="navbar">
             <ul>
-                <li><a href="nosotros.html">NOSOTROS</a></li>
-                <li><a href="comprar.html">COMPRAR</a></li>
-                <li><a href="vender.html">VENDER</a></li>
-                <li><a href="inicio.html">INICIAR SESION O REGISTRARSE</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="comprar.html">Comprar</a></li>
+                <li><a href="vender.html">Vender</a></li>
+                <li><a href="inicio.html">Iniciar Sesión o Registrarse</a></li>
+                <li><a href="logout.html">Cerrar sesión</a></li>
+                <li><a>  </a></li>
             </ul>
         </nav>
     </div>
+
     <div class="header-content container">
         <div class="header-txt">
             <h1>BIENVENIDO A BOOK-HOME</h1>
             <p>
                 "Tu plataforma confiable para encontrar el hogar de tus sueños."
+                <hr>
             </p>
         </div>
     </div>
@@ -37,10 +44,10 @@
     <section class="about-section">
         <div class="about-container">
             <h2>Sobre Nosotros</h2>
-            <p>
+            <p class="sobre-nosotros">
                 En <strong>Book-Home</strong>, nos apasiona ayudarte a encontrar el hogar perfecto. Con una amplia experiencia en el sector inmobiliario, nuestro equipo se dedica a ofrecerte un servicio excepcional, ya sea que busques comprar, vender o invertir.
-            </p>
-            <img src="IMAGENES/img5.avif" alt="Casa moderna" class="about-image">
+            </p><br>
+            <img src="IMAGENES/img14.jpg" alt="Casa moderna" class="about-image">
         </div>
     </section>
 
@@ -51,35 +58,96 @@
                 <div class="value-item">
                     <img src="IMAGENES/img7.jfif" alt="Confianza">
                     <h3>Confianza</h3>
-                    <p>Creemos en la transparencia y la honestidad en cada transacción.</p>
+                    <p>Creemos en la transparencia y la honestidad en cada transacción.</p><br>
                 </div>
                 <div class="value-item">
-                    <img src="IMAGENES/img6.png" alt="Compromiso">
+                    <img src="IMAGENES/img16.jpg" alt="Compromiso">
                     <h3>Compromiso</h3>
-                    <p>Nos comprometemos a brindar un servicio de alta calidad.</p>
+                    <p>Nos comprometemos a brindar un servicio de alta calidad.</p><br>
                 </div>
                 <div class="value-item">
                     <img src="IMAGENES/img8.jpg" alt="Innovación">
                     <h3>Innovación</h3>
-                    <p>Utilizamos tecnología avanzada para hacer tu experiencia más eficiente.</p>
+                    <p>Utilizamos tecnología avanzada para hacer tu experiencia más eficiente.</p><br>
                 </div>
             </div>
+        </div>
+    </section>
+    
+    
+
+    <section class="about-section">
+        <div class="about-container">
+            <h2>Visión</h2>
+            <p class="sobre-nosotros">
+                Ser una de las mejores empresas a nivel mundial, reconocida por promover la inclusión y el respeto hacia todas las personas, ayudando a las empresas a tener una buena y fácil.
+ administración
+            </p><br>
+            <img src="IMAGENES/img13.jpg" alt="Casa moderna" class="about-image">
         </div>
     </section>
 
     <footer>
         <div class="footer-div">
-            <p>DERECHOS RESEVADOS POR BOOK HOME®</p>
+            <p>&copy; <span id="year"></span> Homebook. Todos los derechos reservados.</p><br>
             <div class="redes">
-            <p>
+                <p>
+                            <!-- Enlace a Instagram -->
+        <a href="https://www.instagram.com/bookhome_app/?next=%2F&hl=es" target="_blank">
             <ion-icon name="logo-instagram"></ion-icon>
-            <ion-icon name="logo-whatsapp"></ion-icon> 
+        </a>
+
+        <!-- Enlace a WhatsApp -->
+        <a href="https://wa.me/525528456729" target="_blank">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+
+        <!-- Enlace a Facebook (debes agregar la URL correcta de tu perfil o página) 
+        <a href="https://www.facebook.com/tu.pagina" target="_blank">
             <ion-icon name="logo-facebook"></ion-icon>
+        </a>-->
+
+        <!-- Enlace a Twitter -->
+        <a href="https://x.com/hoomebook51521" target="_blank">
             <ion-icon name="logo-twitter"></ion-icon>
-            </p>
+        </a>
+
+                </p>
             </div>
         </div>
     </footer>
         
 </body>
+<script>
+    let lastScrollY = 0;
+    const menu = document.querySelector('.menu');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            menu.classList.add('hidden'); // Oculta al bajar
+        } else {
+            menu.classList.remove('hidden'); // Muestra al subir
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".value-item");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("appear");
+            } else {
+                entry.target.classList.remove("appear");
+            }
+        });
+    }, { threshold: 0.99 });
+
+    items.forEach(item => observer.observe(item));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
 </html>

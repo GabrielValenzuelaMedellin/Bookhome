@@ -7,13 +7,14 @@ CREATE TABLE Usuarios (
     nombre VARCHAR(30) NOT NULL,
     telefono VARCHAR(10) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
-    contrasena CHAR(16) NOT NULL
+    contrasena VARCHAR(16) NOT NULL
 );
-/*drop database homebook;*/
+
 -- Tabla Propiedades
 CREATE TABLE Propiedades (
     id_propiedad INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
+    estado_propiedad ENUM ('renta','compra') NOT NULL,
     tipo_propiedad ENUM('casa', 'departamento') NOT NULL,
     precio DECIMAL(10, 2) NOT NULL,
     descripcion TEXT,
@@ -23,13 +24,16 @@ CREATE TABLE Propiedades (
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 );
 
--- Tabla Ubicaciones (sin redundancia con propiedades)
-CREATE TABLE Ubicaciones (
-    id_ubicacion INT AUTO_INCREMENT PRIMARY KEY,
+-- Nueva Tabla Direcciones (desglosada en distintos campos)
+CREATE TABLE Direcciones (
+    id_direccion INT AUTO_INCREMENT PRIMARY KEY,
     id_propiedad INT NOT NULL,
+    calle VARCHAR(255) NOT NULL,
+    numero_exterior VARCHAR(50) NOT NULL,
+    numero_interior VARCHAR(50),
     colonia VARCHAR(100) NOT NULL,
+    codigo_postal VARCHAR(10) NOT NULL,
     delegacion VARCHAR(100) NOT NULL,
-    ciudad VARCHAR(100) NOT NULL,
     FOREIGN KEY (id_propiedad) REFERENCES Propiedades(id_propiedad)
 );
 
@@ -66,5 +70,6 @@ CREATE TABLE Resenas (
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario),
     FOREIGN KEY (id_propiedad) REFERENCES Propiedades(id_propiedad)
 );
-SELECT * FROM Usuarios;
-select * from Propiedades;
+SELECT * FROM propiedades;
+SELECT * FROM usuarios;
+SELECT * FROM direcciones;
