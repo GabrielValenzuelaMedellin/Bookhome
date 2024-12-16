@@ -19,11 +19,11 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-const con = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'n0m3l0',
-    database: 'homebook'
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST,        // Usamos la variable de entorno para el host
+  user: process.env.DB_USER,        // Usamos la variable de entorno para el usuario
+  password: process.env.DB_PASS,    // Usamos la variable de entorno para la contraseña
+  database: process.env.DB_NAME     // Usamos la variable de entorno para el nombre de la base de datos
 });
 
 con.connect((err) => {
