@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-const connection = mysql.createConnection({
+const con = mysql.createConnection({
   host: process.env.DB_HOST,        // Usamos la variable de entorno para el host
   user: process.env.DB_USER,        // Usamos la variable de entorno para el usuario
   password: process.env.DB_PASS,    // Usamos la variable de entorno para la contraseña
